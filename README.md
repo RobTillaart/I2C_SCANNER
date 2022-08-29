@@ -20,7 +20,11 @@ Goal is to rebuild my multispeed_I2C_scanner with this class.
 
 ## Interface
 
-TODO
+- **I2C_SCANNER(TwoWire \*wire = &Wire)**
+- **bool begin(int sda, int scl)** for ESP32 et al.
+- **bool begin()**
+- **bool ping(uint8_t address)**
+- **bool setClock(uint32_t clockFrequency = 100000UL)**
 
 
 ## Operation
