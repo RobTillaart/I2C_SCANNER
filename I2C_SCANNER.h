@@ -35,7 +35,7 @@ public:
 
   //  TIMING
   bool     setClock(uint32_t clockFrequency = 100000UL);
-#if defined (ESP8266) || defined(ESP32)
+#if defined(ESP32)
   uint32_t getClock();
 #endif
 

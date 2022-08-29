@@ -68,7 +68,7 @@ See examples.
 - add examples.
 
 - documentation
-- add **bool softwareReset()**
+- add **bool softwareReset()** (0.1.2)
   - command 0x03
 - **uint8_t \_devices[16]** cache hits ?
   

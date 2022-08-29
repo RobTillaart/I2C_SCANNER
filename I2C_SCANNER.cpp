@@ -98,7 +98,7 @@ bool I2C_SCANNER::setClock(uint32_t clockFrequency)
 }
 
 
-#if defined (ESP8266) || defined(ESP32)
+#if defined(ESP32)
 uint32_t I2C_SCANNER::getClock()
 {
   return _wire->getClock();
