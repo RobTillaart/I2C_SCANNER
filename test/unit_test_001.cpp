@@ -74,7 +74,7 @@ unittest(test_scanning)
   //  not a real test but at least something...
   fprintf(stderr, "PING:  %d\n", scanner.ping(0x50));
   fprintf(stderr, "DIAG:  %d\n", scanner.diag(0x50));
-  fprintf(stderr, "COUNT: %d\n", scanner.count());
+  //  fprintf(stderr, "COUNT: %d\n", scanner.count());
   //  pingTime uses micros() so will block...
 }
 
