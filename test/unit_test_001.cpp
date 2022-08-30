@@ -30,7 +30,7 @@
 
 unittest_setup()
 {
-    fprintf(stderr, "I2C_SCANNER_LIB_VERSION: %s\n", (char *) I2C_SCANNER_LIB_VERSION);
+  fprintf(stderr, "I2C_SCANNER_LIB_VERSION: %s\n", (char *) I2C_SCANNER_LIB_VERSION);
 }
 
 unittest_teardown()
@@ -41,9 +41,27 @@ unittest_teardown()
 unittest(test_constructor)
 {
   I2C_SCANNER scanner;
+  assertTrue(scanner.begin());
+
+  assertTrue(scanner.setClock(200000));
+
+  assertEqual(1, 1); //  keep build-CI happy
+}
+
+
+unittest(test_getWirePortCount)
+{
+  I2C_SCANNER scanner;
   scanner.begin();
   
-  assertEqual(1, 1); //  keep build-CI happy
+  int ports = scanner.getWirePortCount();
+  fprintf(stderr, "PORTS: %d\n", ports);
+  assertMoreOrEqual(1, ports);
+  
+  for (int p = 0; p < ports; p++)
+  {
+    assertTrue(scanner.setWire(p));
+  }
 }
 
 

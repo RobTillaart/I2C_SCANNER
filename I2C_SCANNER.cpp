@@ -1,7 +1,7 @@
 //
 //    FILE: I2C_SCANNER.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.1
+// VERSION: 0.1.2
 //    DATE: 2022-08-29
 // PURPOSE: I2C scanner class
 //
@@ -85,6 +85,30 @@ bool I2C_SCANNER::setWire(uint8_t n)
 TwoWire* I2C_SCANNER::getWire()
 {
   return _wire;
+}
+
+//
+//  RESET
+//
+int I2C_SCANNER::softwareReset(uint8_t method)
+{
+  //  only support 0 and 1
+  if (method > 1) return -999;
+  if (method == 1)
+  {
+    //  from https://github.com/RobTillaart/PCA9634/issues/10#issuecomment-1206326417
+   const uint8_t SW_RESET = 0x03;
+   _wire->beginTransmission(SW_RESET)
+   _wire->write(0xA5);
+   _wire->write(0x5A);
+   return _wire->endTransmission(true);
+  }
+
+  //  default 
+  //  based upon NXP specification - UM10204.pdf - page 16
+  _wire->beginTransmission(0x00)
+  _wire->write(0x06);
+  return _wire->endTransmission(true);
 }
 
 
