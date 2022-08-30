@@ -82,6 +82,8 @@ See examples.
 
 - add examples.
 - documentation.
+- add **setWireTimeOut(uint32_t timeout, bool reset_with_timeout = true)**
+  - portable? clear? reset?
 
 
 #### Could

@@ -159,7 +159,7 @@ int32_t I2C_SCANNER::pingTime(uint8_t address)
 uint8_t I2C_SCANNER::count(uint8_t start, uint8_t end)
 {
   uint8_t cnt = 0;
-  for (int addr = start; addr <= end; addr++)
+  for (uint8_t addr = start; addr <= end; addr++)
   {
     if (diag(addr) == 0) cnt++;
   }
