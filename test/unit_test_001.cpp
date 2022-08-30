@@ -44,15 +44,13 @@ unittest(test_constructor)
   assertTrue(scanner.begin());
 
   assertTrue(scanner.setClock(200000));
-
-  assertEqual(1, 1); //  keep build-CI happy
 }
 
 
 unittest(test_getWirePortCount)
 {
   I2C_SCANNER scanner;
-  scanner.begin();
+  assertTrue(scanner.begin());
   
   int ports = scanner.getWirePortCount();
   fprintf(stderr, "PORTS: %d\n", ports);
@@ -62,6 +60,22 @@ unittest(test_getWirePortCount)
   {
     assertTrue(scanner.setWire(p));
   }
+
+  //  explicit fail
+  assertFalse(scanner.setWire(10));
+}
+
+
+unittest(test_scanning)
+{
+  I2C_SCANNER scanner;
+  assertTrue(scanner.begin());
+
+  //  not a real test but at least something...
+  fprintf(stderr, "PING:  %d\n", scanner.ping(0x50));
+  fprintf(stderr, "DIAG:  %d\n", scanner.diag(0x50));
+  fprintf(stderr, "COUNT: %d\n", scanner.count());
+
 }
 
 
