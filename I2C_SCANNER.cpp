@@ -98,7 +98,7 @@ int I2C_SCANNER::softwareReset(uint8_t method)
   {
     //  from https://github.com/RobTillaart/PCA9634/issues/10#issuecomment-1206326417
    const uint8_t SW_RESET = 0x03;
-   _wire->beginTransmission(SW_RESET)
+   _wire->beginTransmission(SW_RESET);
    _wire->write(0xA5);
    _wire->write(0x5A);
    return _wire->endTransmission(true);
@@ -106,7 +106,7 @@ int I2C_SCANNER::softwareReset(uint8_t method)
 
   //  default 
   //  based upon NXP specification - UM10204.pdf - page 16
-  _wire->beginTransmission(0x00)
+  _wire->beginTransmission(0x00);
   _wire->write(0x06);
   return _wire->endTransmission(true);
 }
