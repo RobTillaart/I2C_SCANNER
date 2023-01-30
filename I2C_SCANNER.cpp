@@ -169,15 +169,15 @@ uint8_t I2C_SCANNER::count(uint8_t start, uint8_t end)
 
 bool I2C_SCANNER::setWireTimeOut(uint32_t timeOut)
 {
-  _wireTimeOut = timeOut;
+  _timeOut = timeOut;
   //  _wire->setWireTimeOut(timeOut);
   return true;
 }
 
 
-uint32_t getWireTimeOut()
+uint32_t I2C_SCANNER::getWireTimeOut()
 {
-  return _wireTimeOut;
+  return _timeOut;
 }
 
 
