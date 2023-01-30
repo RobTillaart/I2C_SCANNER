@@ -48,8 +48,8 @@ public:
   uint8_t  count(uint8_t start = 0, uint8_t end = 127);
 
 
-  bool     setTimeOut(uint32_t timeOut);
-  uint32_t getTimeOut();
+  bool     setWireTimeOut(uint32_t timeOut);
+  uint32_t getWireTimeOut();
 
 private:
   int      _init();
