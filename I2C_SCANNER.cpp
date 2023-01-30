@@ -172,7 +172,8 @@ bool I2C_SCANNER::setWireTimeout(uint32_t timeOut)
   if (_timeout != timeOut)
   {
     _timeout = timeOut;
-    _wire->setWireTimeout(timeOut);
+    //  not all platforms support this.
+    //  _wire->setWireTimeout(timeOut);
     return true;
   }
   return false;
