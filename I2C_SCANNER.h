@@ -56,7 +56,7 @@ private:
   int      _wirePortCount;
   TwoWire* _wire;
   
-  uint32_t _timeOut = 0;
+  uint32_t _wireTimeOut = 0;
 };
 
 
