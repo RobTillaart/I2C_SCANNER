@@ -2,15 +2,15 @@
 //
 //    FILE: I2C_SCANNER.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.3
+// VERSION: 0.1.4
 //    DATE: 2022-08-29
 // PURPOSE: I2C scanner class
-//
+
 
 #include "Arduino.h"
 #include "Wire.h"
 
-#define I2C_SCANNER_LIB_VERSION        (F("0.1.3"))
+#define I2C_SCANNER_LIB_VERSION        (F("0.1.4"))
 
 
 class I2C_SCANNER
@@ -41,17 +41,22 @@ public:
   uint32_t getClock();
 #endif
 
-
   //  SCANNING FUNCTIONS
   bool     ping(uint8_t address);
   int      diag(uint8_t address);
   int32_t  pingTime(uint8_t address);
   uint8_t  count(uint8_t start = 0, uint8_t end = 127);
 
+
+  bool     setTimeOut(uint32_t timeOut);
+  uint32_t getTimeOut();
+
 private:
   int      _init();
   int      _wirePortCount;
   TwoWire* _wire;
+  
+  uint32_t _timeOut = 0;
 };
 
 
