@@ -48,15 +48,15 @@ public:
   uint8_t  count(uint8_t start = 0, uint8_t end = 127);
 
 
-  bool     setWireTimeOut(uint32_t timeOut);
-  uint32_t getWireTimeOut();
+  bool     setWireTimeout(uint32_t timeOut);
+  uint32_t getWireTimeout();
 
 private:
   int      _init();
   int      _wirePortCount;
   TwoWire* _wire;
   
-  uint32_t _timeOut = 0;
+  uint32_t _timeout = 0;
 };
 
 
