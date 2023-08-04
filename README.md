@@ -8,7 +8,7 @@
 
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
-[![Sponsor](https://img.shields.io/badge/Support_this_repo-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
+[![Sponsor](https://img.shields.io/badge/Support_this_project-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 
 
 # I2C_SCANNER
