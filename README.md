@@ -1,4 +1,5 @@
 
+
 [![Arduino CI](https://github.com/RobTillaart/I2C_SCANNER/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml)
@@ -8,10 +9,9 @@
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
 
-[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/issues)
-
 [![Sponsor](https://img.shields.io/badge/Sponsor-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-green.svg)](https://github.com/sponsors/RobTillaart?o=esb)
+
 
 # I2C_SCANNER
 
@@ -34,13 +34,18 @@ If there is missing functionality, please file an issue.
 
 ## Interface
 
-### Constructor
+```cpp
+#include "I2C_SCANNER.h"
+```
+
+#### Constructor
+
 - **I2C_SCANNER(TwoWire \*wire = &Wire)** Constructor with the default Wire I2C bus.
 - **bool begin()** To start the Wire library.
 - **bool begin(int sda, int scl)** idem for ESP32 et al.
 
 
-### Configuration
+#### Configuration
 
 - **bool setClock(uint32_t clockFrequency = 100000UL)** sets the speed of the I2C bus.
 Returns true.
@@ -51,7 +56,7 @@ Returns true.
 - **TwoWire \* getWire()** returns the Wire object set.
 
 
-### Scanning
+#### Scanning
 
 - **bool ping(uint8_t address)** Tries to make contact with I2C address.
 Returns true on success.
@@ -63,7 +68,7 @@ Returns time used in micros. Returns minus time (<0) if failed to contact.
 Includes start and end address too. Returns the number of addresses found.
 
 
-### Reset
+#### Reset
 
 (needs testing)
 
