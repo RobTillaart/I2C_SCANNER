@@ -10,6 +10,7 @@
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
 [![Sponsor](https://img.shields.io/badge/Support_this_project-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 
+[![Sponsor](https://img.shields.io/badge/Forum-Arduino-darkgreen.svg)](https://forum.arduino.cc/)
 
 # I2C_SCANNER
 
