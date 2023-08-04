@@ -1,14 +1,10 @@
 
-#### Build Status
-
 [![Arduino CI](https://github.com/RobTillaart/I2C_SCANNER/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/I2C_SCANNER/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
-
-#### Sponsoring
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-green.svg)](https://github.com/sponsors/RobTillaart?o=esb)
