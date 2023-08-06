@@ -1,14 +1,14 @@
 
-
 [![Arduino CI](https://github.com/RobTillaart/I2C_SCANNER/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/RobTillaart/I2C_SCANNER/blob/master/LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/issues)
+[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/issues)
+[![Sponsor](https://img.shields.io/badge/Support_this_project-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
-[![Sponsor](https://img.shields.io/badge/Support_this_project-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
+
 
 
 # I2C_SCANNER
@@ -27,7 +27,12 @@ select the bus in case of multiple I2C ports.
 Furthermore there are different functions to scan the I2C port, 
 see the section scanning below.
 
-If there is missing functionality, please file an issue.
+If there is missing functionality in this library, please file an issue.
+
+
+#### Related
+
+- https://github.com/RobTillaart/MultiSpeedI2CScanner
 
 
 ## Interface
@@ -81,20 +86,17 @@ The value -999 indicates invalid method selected.
 Other are I2C specific error codes.
 
 
-## Operation
-
-See examples.
-
-
 ## Future ideas
+
+#### Must
+
+- documentation.
 
 #### Should
 
 - add examples.
-- documentation.
 - add **setWireTimeOut(uint32_t timeout, bool reset_with_timeout = true)**
   - portable? clear? reset?
-
 
 #### Could
 
@@ -102,10 +104,8 @@ See examples.
   - keep data HIGH for X clock pulses - google this.
   - (needs investigation)
 - implement **getClock()** for AVR based platforms
-  - reverse calculate TWBR and prescaler.
+  - reverse calculate TWBR and pre-scaler.
   - (needs investigation)
-
-
 
 #### Won't
 
