@@ -142,7 +142,8 @@ bool I2C_SCANNER::ping(uint8_t address)
 int I2C_SCANNER::diag(uint8_t address)
 {
   _wire->beginTransmission(address);
-  return _wire->endTransmission();
+  int x = _wire->endTransmission();
+  return x;
 }
 
 

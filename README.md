@@ -3,6 +3,7 @@
 [![Arduino-lint](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml)
 [![GitHub issues](https://img.shields.io/github/issues/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/issues)
+[![GitHub issues](https://img.shields.io/github/commits/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/commits)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/RobTillaart/I2C_SCANNER/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
@@ -56,6 +57,7 @@ Returns true.
 - **uint8_t getWireCount()** returns the number of Wire ports (hardware I2C).
 - **bool setWire(TwoWire \*wire = &Wire)** set a Wire port by 'name' e.g. Wire1.
 - **bool setWire(uint8_t n)** sets the Wire port by number.
+Assumes there exist Wire, Wire1 ... Wire5.
 - **TwoWire \* getWire()** returns the Wire object set.
 
 
@@ -105,7 +107,9 @@ Other are I2C specific error codes.
   - (needs investigation)
 - implement **getClock()** for AVR based platforms
   - reverse calculate TWBR and pre-scaler.
-  - (needs investigation)
+  - needs investigation
+- support for RP2040
+  - needs investigation
 
 #### Won't
 
