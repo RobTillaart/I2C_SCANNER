@@ -3,10 +3,9 @@
 [![Arduino-lint](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/I2C_SCANNER/actions/workflows/jsoncheck.yml)
 [![GitHub issues](https://img.shields.io/github/issues/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/issues)
-[![GitHub commits](https://img.shields.io/github/commits/RobTillaart/I2C_SCANNER.svg)](https://github.com/RobTillaart/I2C_SCANNER/commits)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/RobTillaart/I2C_SCANNER/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
+[![GitHub Release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
 [![Sponsor](https://img.shields.io/badge/Sponsor_with-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
 
