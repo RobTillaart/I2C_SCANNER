@@ -27,7 +27,25 @@ select the bus in case of multiple I2C ports.
 Furthermore there are different functions to scan the I2C port, 
 see the section scanning below.
 
+The address range for "normal" I2C devices is from 9 to 119. 
+The user may use other values for address at his own risk. 
+
 If there is missing functionality in this library, please file an issue.
+
+
+#### Testing
+
+The library is tested with the following boards:
+
+|   board   |  works  |
+|:---------:|:-------:|
+|  UNO      |   yes   |
+|  MEGA     |   yes   |
+|  NANO     |    ?    |
+|  ESP8266  |    ?    |
+|  ESP32    |   yes   |
+
+Please file an issue if your board does work (or not).
 
 
 #### Related
@@ -52,18 +70,27 @@ If there is missing functionality in this library, please file an issue.
 
 - **bool setClock(uint32_t clockFrequency = 100000UL)** sets the speed of the I2C bus.
 Returns true.
+Note the supported frequency is board dependent. Check your boards datasheet.
 - **uint32_t getClock()** supported by some platforms, including ESP32.
+Please fill in issue if your board is missing here.
 - **uint8_t getWireCount()** returns the number of Wire ports (hardware I2C).
-- **bool setWire(TwoWire \*wire = &Wire)** set a Wire port by 'name' e.g. Wire1.
+To be used by **setWire(uint8_t n)**.
 - **bool setWire(uint8_t n)** sets the Wire port by number.
 Assumes there exist Wire, Wire1 ... Wire5.
+The number n should not exceed the value returned by **getWireCount()**
+- **bool setWire(TwoWire \*wire = &Wire)** set a Wire port by 'name' e.g. Wire1.
 - **TwoWire \* getWire()** returns the Wire object set.
 
 
 #### Scanning
 
-- **bool ping(uint8_t address)** Tries to make contact with I2C address.
-Returns true on success.
+- **uint16_t ping(uint8_t address, uint16_t count = 1)** Tries to make contact with I2C address.
+Returns number of successful contacts.
+Typical number of retries is 1..5, however one can also do a long test up to 65535 retries.
+Can be used for endurance test / diagnosis.  
+Note the function does not call **yield()** intern so use with care.  
+Note that when count is large, the function call will block for a long time. 
+Better to do a loop of e.g. 100 retries at a time. 
 - **int diag(uint8_t address)** Tries to make contact with I2C address.
 Returns Wire status code 0 == OK, others might depend on platform used.
 - **int32_t pingTime(uint8_t address)** Tries to make contact with I2C address.
@@ -97,18 +124,27 @@ Other are I2C specific error codes.
 
 - add examples.
 - add **setWireTimeOut(uint32_t timeout, bool reset_with_timeout = true)**
-  - portable? clear? reset?
+  - portable? clear? reset? default?
+  - needs to be set for every Wire interface
+  - ESP8266 does have a **setClockStretchLimit(timeout)**
 
 #### Could
 
 - add **bool hardwareReset()** 
   - keep data HIGH for X clock pulses - google this.
   - (needs investigation)
+  - https://github.com/esp8266/Arduino/issues/1025
+- read the state of the I2C pins
+  - **uint8_t readSDA()** diagnose the I2C bus. Board specific!
+  - **uint8_t readSCL()** diagnose the I2C bus. Board specific!
 - implement **getClock()** for AVR based platforms
   - reverse calculate TWBR and pre-scaler.
   - needs investigation
 - support for RP2040
   - needs investigation
+- add table with default I2C pins per platform / board
+  - https://www.arduino.cc/reference/en/language/functions/communication/wire/
+
 
 #### Won't
 
