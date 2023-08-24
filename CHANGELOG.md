@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - update readme.md
 - add issue-count badge
 - add PlatformIO badge
-- add sponsor badge
 - minor edits
 
 ----

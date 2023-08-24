@@ -7,8 +7,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/RobTillaart/I2C_SCANNER/blob/master/LICENSE)
 [![GitHub Release](https://img.shields.io/github/release/RobTillaart/I2C_SCANNER.svg?maxAge=3600)](https://github.com/RobTillaart/I2C_SCANNER/releases)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/I2C_SCANNER.svg)](https://registry.platformio.org/libraries/robtillaart/I2C_SCANNER)
-[![Sponsor](https://img.shields.io/badge/Sponsor_with-PayPal-green.svg)](https://paypal.me/robtillaart/EUR)
-
 
 
 # I2C_SCANNER
@@ -160,3 +158,13 @@ Other are I2C specific error codes.
   - No
 - implement a **SW_I2C**
   - No, user may use a SW_I2C that derives from TwoWire.
+
+
+## Support
+
+If you appreciate my libraries, you can support the development and maintenance.
+Improve the quality of the libraries by providing issues and Pull Requests, or
+donate through PayPal or GitHub sponsors.
+
+Thank you,
+
