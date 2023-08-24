@@ -22,7 +22,9 @@ I2C_SCANNER is a class to build an I2C scanner, either minimal or more complex.
 
 The class provides different functions to analyse the connectivity of devices
 on the I2C bus. There are functions to adjust the frequency and functions to 
-select the bus in case of multiple I2C ports. 
+select the bus in case of multiple I2C ports.
+
+A typical other use is to see if all devices are available (breadboard test).
 
 Furthermore there are different functions to scan the I2C port, 
 see the section scanning below.
@@ -85,16 +87,16 @@ The number n should not exceed the value returned by **getWireCount()**
 #### Scanning
 
 - **uint16_t ping(uint8_t address, uint16_t count = 1)** Tries to make contact with I2C address.
-Returns number of successful contacts.
+Returns the number of successful "contacts / connections" with the address.
 Typical number of retries is 1..5, however one can also do a long test up to 65535 retries.
-Can be used for endurance test / diagnosis.  
+Can be used for endurance test / diagnosis of responsiveness.  
 Note the function does not call **yield()** intern so use with care.  
 Note that when count is large, the function call will block for a long time. 
-Better to do a loop of e.g. 100 retries at a time. 
+Better use a loop of e.g. 100 retries at a time. 
 - **int diag(uint8_t address)** Tries to make contact with I2C address.
-Returns Wire status code 0 == OK, others might depend on platform used.
+Returns Wire status code 0 == OK, other return values might depend on platform used.
 - **int32_t pingTime(uint8_t address)** Tries to make contact with I2C address.
-Returns time used in micros. Returns minus time (<0) if failed to contact.
+Returns time used in micros. Returns a negative time (< 0) if failed to contact.
 - **uint8_t count(uint8_t start = 0, uint8_t end = 127)** pings address range.
 Includes start and end address too. Returns the number of addresses found.
 
@@ -156,5 +158,5 @@ Other are I2C specific error codes.
   - **uint8_t next()** returns address or 255.
 - **uint8_t \_devices[16]** cache hits ?
   - No
-- implement a SW_I2C
+- implement a **SW_I2C**
   - No, user may use a SW_I2C that derives from TwoWire.

@@ -48,7 +48,8 @@ public:
   int32_t  pingTime(uint8_t address);
   uint8_t  count(uint8_t start = 0, uint8_t end = 127);
 
-  //  experimental.
+
+  //  EXPERIMENTAL.
   //  not all platforms support this function.
   //  patch .cpp file to get this working for your platform.
   bool     setWireTimeout(uint32_t timeOut);
